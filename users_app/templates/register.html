@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title> todo-register </title>
+{% endblock title %}
+{% block head %}
+{% if messages %}
+{% for msg in messages%}
+      <div class="alert alert-success"   role="alert">
+        {{msg}}
+     
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+  {% endfor %}
+ {% endif %}
+  <div class='container' >
+    <form method="POST">
+    {% csrf_token %}
+    {{register_form|crispy}}
+    <button type="submit">Register</button>
+    </form>
+   
+  </div>
+
+{% endblock head %}
+

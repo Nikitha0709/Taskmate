@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+<title> todo-Index </title>
+{% endblock title %}
+{% block head %}
+<div style="background-image: url ('https://5.imimg.com/data5/PX/IX/MY-38990110/post-it-sticky-notes-500x500.jpg');">
+<div class="container row mt-5">
+<img src="https://images.pexels.com/photos/7103/writing-notes-idea-conference.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" class="shadow-sm mt-3 col" width="300" height="200" alt="notes">
+<img src="https://www.amazon.in/images/I/81nia28xsOL._SL1500_.jpg" alt="notes2"class="shadow-sm mt-3 col" width="300" height ="200">
+<img src="https://www.imore.com/sites/imore.com/files/styles/w830_wm_brb/public/field/image/2020/05/notes-app-sketch-ipad-pro-apple-pencil.jpeg"alt="notes3" width="300" height ="200" class=" shadow-sm col mt-3">
+</div>
+<div class="container mt-5" style="text-align: center">
+<h1> Welcome todo-List Program</h1>
+
+</div>
+
+<div class="container mt-5" style="padding-left: 300px; padding-right: 290px" >
+{% if user.is_authenticated %}
+<a role="button" class=" btn btn-primary btn-lg btn-block shadow  px-5" href="/task">Let's Start</a>
+{% else %}
+<a role="button" class=" btn btn-primary btn-lg btn-block shadow  px-5" href="/account/register">Please Get registered</a>
+<div class="container mt-3" style="text-align: center">
+<p> Or if already registered</p>
+</div>
+<a role="button" class=" btn btn-primary btn-lg btn-block shadow  px-5 md-3 pd-2" href="/account/login">Login</a>
+{% endif %}
+</div>
+</div>
+{% endblock head %}
+
